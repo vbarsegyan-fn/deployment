@@ -90,12 +90,12 @@ RUN chmod 755 gLiveView.sh
 ENV CARDANO_NODE_SOCKET_PATH /cardano/cardano-node/db/node.socket
 ARG node-type
 
-WORKDIR /cardano/cardano-node
+WORKDIR /generate
 RUN wget https://hydra.iohk.io/build/3662127/download/1/cardano-wallet-shelley-2020.7.28-linux64.tar.gz
 RUN tar -xvf cardano-wallet-shelley-2020.7.28-linux64.tar.gz && \
-    rm cardano-wallet-shelley-2020.7.28-linux64.tar.gz && \
-    export PATH="$(pwd)/cardano-wallet-shelley-2020.7.28:$PATH"
-COPY extractPoolStakingKeys.sh /cardano/cardano-node/
-RUN chmod +x extractPoolStakingKeys.sh
+    rm cardano-wallet-shelley-2020.7.28-linux64.tar.gz
+ENV PATH "${PATH}:/generate/cardano-wallet-shelley-2020.7.28"
+COPY generateOwnerKeys.sh /generate
+RUN chmod +x generateOwnerKeys.sh
 
 CMD [ "/cardano/runner.sh", "cardano-node", "/cardano", ${node-type} ]
