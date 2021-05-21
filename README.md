@@ -1,6 +1,9 @@
 # Generating a verification key using your mnemonic
 If you want to use an existing wallet for pledging, please follow these instructions. Do your best not to expose any of the generated keys online. 
 
+## Prerequisites
+* Docker running on your local machine
+
 ## Build and exec into the Cardano image
 
 ```
