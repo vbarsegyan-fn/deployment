@@ -79,6 +79,6 @@ EOF
     --stake-verification-key-file stake.vkey \
     $MAGIC > base.addr
 
-echo "Important the base.addr and the base.addr_candidate must be the same"
-diff base.addr base.addr_candidate
-popd >/dev/null
+# echo "Important the base.addr and the base.addr_candidate must be the same"
+# diff base.addr base.addr_candidate
+# popd >/dev/null

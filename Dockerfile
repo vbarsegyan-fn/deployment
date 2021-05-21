@@ -91,11 +91,11 @@ ENV CARDANO_NODE_SOCKET_PATH /cardano/cardano-node/db/node.socket
 ARG node-type
 
 WORKDIR /cardano/cardano-node
-COPY extractPoolStakingKeys.sh /cardano/cardano-node/
 RUN wget https://hydra.iohk.io/build/3662127/download/1/cardano-wallet-shelley-2020.7.28-linux64.tar.gz
 RUN tar -xvf cardano-wallet-shelley-2020.7.28-linux64.tar.gz && \
     rm cardano-wallet-shelley-2020.7.28-linux64.tar.gz && \
-    chmod +x extractPoolStakingKeys.sh && \
     export PATH="$(pwd)/cardano-wallet-shelley-2020.7.28:$PATH"
+COPY extractPoolStakingKeys.sh /cardano/cardano-node/
+RUN chmod +x extractPoolStakingKeys.sh
 
 CMD [ "/cardano/runner.sh", "cardano-node", "/cardano", ${node-type} ]
