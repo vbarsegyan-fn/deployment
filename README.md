@@ -17,9 +17,11 @@ docker run -it -v ~/wallet:/wallet --name cardano-node cardano-node /bin/bash
 ## Generate a verification key
 
 ```
+# in the running container
 ./generateOwnerKeys.sh /wallet/$YOUR_NAME "$YOUR_MNEMONIC_PHRASE"
 cd /wallet/$YOUR_NAME
 cp stake.vkey $YOUR_NAME.vkey
+exit
 ```
 
 ## Securely send Varderes `~/wallet/$YOUR_NAME.vkey`
