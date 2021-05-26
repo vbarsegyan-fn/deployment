@@ -24,6 +24,6 @@ cp stake.vkey $YOUR_NAME.vkey
 exit
 ```
 
-## Securely send Varderes `~/wallet/$YOUR_NAME.vkey`
+## Securely send Varderes `~/wallet/$YOUR_NAME/$YOUR_NAME.vkey`
 
 Store everything in `~/wallet/$YOUR_NAME` somewhere safe.
