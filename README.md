@@ -5,6 +5,7 @@
 * Use fully qualified DNS names for block producer and relays
 * Change username from `ubuntu` to `cardano`
 * Figure out why cardano-cli metadata hash generator is different from what the network expects
+* Split up Dockerfile using build targets
 * Use Viper's Python library for key generation
 * Use Terraform templates for AWS resource 
 
