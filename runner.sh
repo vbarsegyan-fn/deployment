@@ -50,17 +50,17 @@ if [ "$CNODE_MODE" = "relay" ]; then
     --socket-path $BASE_PATH/cardano-node/db/node.socket \
     --port $CNODE_PORT \
     --host-addr $HOST_ADDR \
-    --config $BASE_PATH/cardano-node/config.json \
-    --topology $BASE_PATH/cardano-node/topology.json
+    --config $BASE_PATH/cardano-node/config/config.json \
+    --topology $BASE_PATH/cardano-node/config/topology.json
 elif [ "$CNODE_MODE" = "pool" ]; then
   eval $CMD_PREFIX run \
     --database-path $BASE_PATH/cardano-node/db/ \
     --socket-path $BASE_PATH/cardano-node/db/node.socket \
     --host-addr $HOST_ADDR \
     --port $CNODE_PORT \
-    --config $BASE_PATH/cardano-node/config.json \
-    --topology $BASE_PATH/cardano-node/topology.json \
-    --shelley-kes-key $BASE_PATH/cardano-node/pool_kes.skey \
-    --shelley-vrf-key $BASE_PATH/cardano-node/pool_vrf.skey \
-    --shelley-operational-certificate $BASE_PATH/cardano-node/pool.cert
+    --config $BASE_PATH/cardano-node/config/config.json \
+    --topology $BASE_PATH/cardano-node/config/topology.json \
+    --shelley-kes-key $BASE_PATH/cardano-node/deployment-keys/kes.skey \
+    --shelley-vrf-key $BASE_PATH/cardano-node/deployment-keys/vrf.skey \
+    --shelley-operational-certificate $BASE_PATH/cardano-node/deployment-keys/node.cert
 fi
