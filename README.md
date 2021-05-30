@@ -6,6 +6,7 @@
 * Change username from `ubuntu` to `cardano`
 * Figure out why cardano-cli metadata hash generator is different from what the network expects
 * Use Viper's Python library for key generation
+* Use Terraform templates for AWS resource 
 
 ## Generating a verification key using your mnemonic
 If you want to use an existing wallet for pledging, please follow these instructions. Do your best not to expose any of the generated keys online. 
